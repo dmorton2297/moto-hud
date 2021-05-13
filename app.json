@@ -1,0 +1,12 @@
+{
+  "name": "motorcycle-hud",
+  "displayName": "motorcycle-hud",
+  "expo": {
+    "name": "motorcycle-hud",
+    "slug": "motorcycle-hud",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
