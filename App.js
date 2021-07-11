@@ -1,21 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import LocationTracker from './javascript/components/location-tracker'
+import RideInfo from './javascript/components/ride-info';
+import Actions from './javascript/components/actions';
+import DataProivder from './javascript/providers/data-provider/data-provider';
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <DataProivder>
+      <View style={styles.container}>
+        <LocationTracker />
+        <View style={styles.subContainer}>
+          <RideInfo />
+          <Actions />
+        </View>
+      </View>
+    </DataProivder>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'row'
   },
-});
+  subContainer: {
+    display: 'flex',
+    height: '100%',
+    flexGrow: 1.6
+  }
+})
+
+export default App
